@@ -3,6 +3,7 @@
 echo "installing \"goto\"..."
 
 mkdir -p $HOME/.local/bin
+mkdir -p $HOME/.local/etc/goto
 
 SOURCE_PATH="$PWD/goto"
 TARGET_PATH="$HOME/.local/bin/goto"

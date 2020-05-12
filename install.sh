@@ -2,9 +2,9 @@
 
 # installs all the underlying tools
 
-for d in "*/"; do
-	if [ -f "$1/install.sh" ]; then
-		cd "$1"
+for d in */; do
+	if [ -f "$d/install.sh" ]; then
+		cd "$d"
 		./install.sh
 		cd ..
 	fi

@@ -1,13 +1,13 @@
 #!/bin/bash
 
-if [ -d "src" ]; then
-    cd "src"
-fi
-
 # bash completion
 if [ "$1" == "-c" ]; then
 	complete -W "$(op_completer.py)" op
 	return
+fi
+
+if [ -d "src" ]; then
+    cd "src"
 fi
 
 tmp="$(find -name "$1" -type f)"
