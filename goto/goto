@@ -1,0 +1,49 @@
+#!/bin/bash
+
+libpath="$ul_localresdir/gotolib"
+usage="Usage:\tgoto -n <id> <path>\n\tgoto -n <id>\n\tgoto <id>\n\tgoto -l\n\tgoto -w"
+
+if [ ! -f "$libpath" ]; then
+	touch "$libpath"
+fi
+
+if [ -z "$1" ]; then
+	echo -e "$usage"
+	return
+fi
+
+if [ $1 == "-l" ]; then
+	while read LINE
+	do
+		printf ${LINE%:*}
+		printf " -> "
+		printf ${LINE#*:}
+		echo
+	done < $libpath
+	return
+fi
+
+if [ $1 == "-w" ]; then
+	if [ -f $libpath ]; then
+		vi $libpath
+	else
+		echo "lib \"$libpath\" not found"
+	fi
+fi
+
+if [ $1 == "-n" ]; then
+	if [ -n "$3" ]; then # TODO missing: error if ID already defined
+		echo "$2:$3" >> $libpath
+	else
+		echo "$2:$PWD" >> $libpath
+	fi
+else
+	id=$1
+	line="$(grep "^$id:" $libpath)"
+	line=${line#*:}
+	if [ -n "$line" ]; then
+		cd "$line"
+	else
+		echo "id '$1' not found"
+	fi
+fi
