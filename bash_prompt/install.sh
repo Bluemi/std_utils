@@ -23,12 +23,12 @@ fi
 
 echo "  add the following lines into your bashrc to make bash prompt working:"
 echo ""
-echo "function prompt_command {"
-echo "    CWD_TRIMMED="$(/home/alok/.local/bin/bash_prompt.py)""
-echo "}"
-echo ""
-echo "PROMPT_COMMAND=prompt_command"
-echo "PS1='\[\033[33m\]$CWD_TRIMMED\$\[\033[00m\] '"
+echo 'function prompt_command {'
+echo '    CWD_TRIMMED="$(/home/alok/.local/bin/bash_prompt.py)"'
+echo '}'
+echo ''
+echo 'PROMPT_COMMAND=prompt_command'
+echo 'PS1=\'\[\033[33m\]$CWD_TRIMMED\$\[\033[00m\] \''
 
 
 # Comment for easy copy:
