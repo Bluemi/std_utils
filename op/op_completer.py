@@ -12,7 +12,10 @@ def print_usage():
 
 
 def main():
-    complete_op()
+    if len(sys.argv) >= 2 and sys.argv[1] in ('-h', '--help'):
+        print_usage()
+    else:
+        complete_op()
 
 
 def complete_op():
