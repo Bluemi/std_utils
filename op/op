@@ -1,0 +1,25 @@
+#!/bin/bash
+
+req "xargs"
+req "$ul_editor"
+
+if [ -d "src" ]; then
+    cd "src"
+fi
+
+tmp="$(find -name "$1" -type f)"
+
+if [ "$tmp" == "" ]; then
+	echo "file $1 not found"
+	xdotool key Up
+	exit
+fi
+
+for file in $tmp
+do
+	if [ $(filetype "$file") == "text" ]; then
+		results="$results $file"
+	fi
+done
+
+$ul_editor $results

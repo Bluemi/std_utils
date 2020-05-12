@@ -1,6 +1,6 @@
 #!/bin/bash
 
-libpath="$ul_localresdir/gotolib"
+libpath="$HOME/.local/etc/goto/gotolib"
 usage="Usage:\tgoto -n <id> <path>\n\tgoto -n <id>\n\tgoto <id>\n\tgoto -l\n\tgoto -w"
 
 if [ ! -f "$libpath" ]; then
@@ -9,7 +9,7 @@ fi
 
 if [ -z "$1" ]; then
 	echo -e "$usage"
-	return
+	exit 0
 fi
 
 if [ $1 == "-l" ]; then
@@ -20,7 +20,7 @@ if [ $1 == "-l" ]; then
 		printf ${LINE#*:}
 		echo
 	done < $libpath
-	return
+	exit 0
 fi
 
 if [ $1 == "-w" ]; then
@@ -29,6 +29,18 @@ if [ $1 == "-w" ]; then
 	else
 		echo "lib \"$libpath\" not found"
 	fi
+	exit 0
+fi
+
+if [ "$1" == "-c" ]; then
+	tmp=$(cat $libpath)
+	res=
+	for ok in $tmp
+	do
+		res="$res ${ok%%:*}"
+	done
+	complete -W "$res" goto
+	return
 fi
 
 if [ $1 == "-n" ]; then
