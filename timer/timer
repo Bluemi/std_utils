@@ -1,0 +1,63 @@
+#!/bin/bash
+
+function beep() {
+	paplay "/usr/bin/complete.oga"
+}
+
+function pizza() {
+	sleep $((60 * 17))
+	notify-send pizza
+	beep
+}
+
+function 17_min() {
+	sleep $((60 * 17))
+	notify-send "17 Minuten"
+	beep
+}
+
+function work() {
+	sleep $((60*25))
+	notify-send "5 minutes break"
+	beep
+	sleep $((60*5))
+	notify-send "work again :)"
+	beep
+}
+
+function nudeln() {
+	sleep $((60 * 7))
+	notify-send nudeln
+	beep
+}
+
+function wait_sec() {
+	sleep $1
+	notify-send $2
+	beep
+}
+
+function usage() {
+	echo "timer"
+	echo "timer pizza"
+	echo "timer nudeln"
+	echo "timer <time> <message>"
+}
+
+re='^[0-9]+$'
+
+if [ "$1" == "pizza" ]; then
+	pizza &
+elif [ "$1" == "nudeln" ]; then
+	nudeln &
+elif [ "$1" == "17_min" ]; then
+	17_min &
+elif [ "$1" == "work" ]; then
+	work &
+elif [ "$1" == "-l" ]; then
+	ps aux | grep timer | grep -v "S+"
+elif [[ $1 =~ $re ]]; then
+	wait_sec $(($1 * 60)) $2 &
+else
+	usage
+fi

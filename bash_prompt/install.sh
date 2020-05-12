@@ -7,7 +7,7 @@ mkdir -p $HOME/.local/bin
 ln -s $PWD/src/main.py $HOME/.local/bin/bash_prompt.py
 
 if ! echo $PATH | grep "$HOME/\.local/bin" > /dev/null; then
-	echo "to make this work you should add \$HOME/.local/bin to \$PATH!"
+	echo "to make shorter bash prompt work you should add \$HOME/.local/bin to \$PATH!"
 fi
 
 echo "add the following lines into your bashrc to make bash prompt working"
