@@ -1,8 +1,5 @@
 #!/bin/bash
 
-req "xargs"
-req "$ul_editor"
-
 if [ -d "src" ]; then
     cd "src"
 fi
@@ -17,9 +14,7 @@ fi
 
 for file in $tmp
 do
-	if [ $(filetype "$file") == "text" ]; then
-		results="$results $file"
-	fi
+	results="$results $file"
 done
 
-$ul_editor $results
+nvim $results
