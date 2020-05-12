@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function beep() {
-	paplay "/usr/bin/complete.oga"
+	paplay "$HOME/.local/etc/timer/complete.oga"
 }
 
 function pizza() {
