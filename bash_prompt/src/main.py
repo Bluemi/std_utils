@@ -4,8 +4,6 @@ import os
 import os.path
 
 
-PROMPT_COLOR = r'\[\033[33m\]'
-RESET_COLOR = r'\[\033[00m\]'
 TARGET_LENGTH = 50
 
 
@@ -18,7 +16,6 @@ def get_cwd_no_home():
 def main(): 
     cwd = get_cwd_no_home()
     minized_path = minimize_path(cwd)
-    prompt = '{}{}{}'.format(PROMPT_COLOR, minized_path, RESET_COLOR)
     print(minized_path, end='')
 
 
