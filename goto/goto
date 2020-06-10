@@ -9,7 +9,7 @@ fi
 
 if [ -z "$1" ]; then
 	echo -e "$usage"
-	exit 0
+	return
 fi
 
 if [ $1 == "-l" ]; then
@@ -20,7 +20,7 @@ if [ $1 == "-l" ]; then
 		printf ${LINE#*:}
 		echo
 	done < $libpath
-	exit 0
+	return
 fi
 
 if [ $1 == "-w" ]; then
@@ -29,7 +29,7 @@ if [ $1 == "-w" ]; then
 	else
 		echo "lib \"$libpath\" not found"
 	fi
-	exit 0
+	return
 fi
 
 if [ "$1" == "-c" ]; then
