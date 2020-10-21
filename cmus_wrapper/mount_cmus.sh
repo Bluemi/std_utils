@@ -10,7 +10,7 @@ result=$?
 
 if [ "$result" -eq "0" ]; then
 	# start cmus
-	cmus
+	/home/alok/.local/bin/cmus
 else
 	echo "failed to mount $MUSIC_PATH"
 	sleep 3
