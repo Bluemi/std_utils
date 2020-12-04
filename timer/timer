@@ -55,7 +55,7 @@ elif [ "$1" == "17_min" ]; then
 elif [ "$1" == "work" ]; then
 	work &
 elif [ "$1" == "-l" ]; then
-	ps aux | grep timer | grep -v "S+"
+	ps aux | grep timer | grep -v "S+" | tr -s " " | cut -d " " -f 9,13,14
 elif [[ $1 =~ $re ]]; then
 	wait_sec $(($1 * 60)) $2 &
 else
