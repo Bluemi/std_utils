@@ -12,7 +12,7 @@ if [ -z "$1" ]; then
 	return
 fi
 
-if [ $1 == "-l" ]; then
+if [ "$1" == "-l" ]; then
 	while read LINE
 	do
 		printf ${LINE%:*}
@@ -23,7 +23,7 @@ if [ $1 == "-l" ]; then
 	return
 fi
 
-if [ $1 == "-w" ]; then
+if [ "$1" == "-w" ]; then
 	if [ -f $libpath ]; then
 		vi $libpath
 	else
@@ -43,14 +43,14 @@ if [ "$1" == "-c" ]; then
 	return
 fi
 
-if [ $1 == "-n" ]; then
+if [ "$1" == "-n" ]; then
 	if [ -n "$3" ]; then # TODO missing: error if ID already defined
 		echo "$2:$3" >> $libpath
 	else
 		echo "$2:$PWD" >> $libpath
 	fi
 else
-	id=$1
+	id="$1"
 	line="$(grep "^$id:" $libpath)"
 	line=${line#*:}
 	if [ -n "$line" ]; then
