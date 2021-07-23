@@ -10,7 +10,13 @@ if [ -d "src" ]; then
     cd "src"
 fi
 
-tmp="$(find -name "$1" -type f)"
+if [ "$1" == "-p" ]; then
+	tmp="$(grep -rlI "$2")"
+	pattern="$2"
+else
+	tmp="$(find -name "$1" -type f)"
+fi
+
 
 if [ "$tmp" == "" ]; then
 	echo "file $1 not found"
@@ -23,4 +29,8 @@ do
 	results="$results $file"
 done
 
-nvim $results
+if [ -n "$pattern" ]; then
+	nvim -c ":0; /$pattern" $results
+else
+	nvim $results
+fi
