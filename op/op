@@ -19,9 +19,13 @@ fi
 
 
 if [ "$tmp" == "" ]; then
-	echo "file $1 not found"
+	if [ -n "$pattern" ]; then
+		echo "pattern $pattern not found"
+	else
+		echo "file $1 not found"
+	fi
 	xdotool key Up
-	exit
+	exit 1
 fi
 
 for file in $tmp
