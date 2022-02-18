@@ -44,10 +44,14 @@ if [ "$1" == "-c" ]; then
 fi
 
 if [ "$1" == "-n" ]; then
-	if [ -n "$3" ]; then # TODO missing: error if ID already defined
-		echo "$2:$3" >> $libpath
+	if [ -n "$2" ]; then
+		if [ -n "$3" ]; then # TODO missing: error if ID already defined
+			echo "$2:$3" >> "$libpath"
+		else
+			echo "$2:$PWD" >> "$libpath"
+		fi
 	else
-		echo "$2:$PWD" >> $libpath
+		echo $(basename "$PWD")":$PWD" >> "$libpath"
 	fi
 else
 	id="$1"
