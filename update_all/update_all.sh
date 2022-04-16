@@ -10,3 +10,5 @@ echo "--- updating snap packages ---"
 sudo snap refresh
 sleep 1
 sudo systemctl stop snapd.service
+
+rustup update
