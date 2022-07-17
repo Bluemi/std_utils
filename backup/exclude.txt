@@ -1,0 +1,66 @@
+# absolute directories
+- /Backup
+- /.local/share/
+- /.cache/
+- /apps/
+- /.virtualenvs/
+- /.android/
+- /snap/
+- /cbmi/data/
+- /.rustup/
+- /.cargo/
+- /projects/app/flutter-codelabs/
+- /.local/bin/aseprite/
+- /.config/Slack/
+- /.config/discord/
+- /.config/google-chrome/
+- /.config/Rocket.Chat/
+- /.config/Element/
+- /.config/chromium/
+- /.config/Signal/
+- /.gradle/
+- /.dartServer/
+- /.dart/
+- /.mozilla/
+- /.jdks/
+- /.pub-cache/
+- /.var/
+- /.librewolf/
+- /.log/
+- /.zotero/
+- /Zotero/
+- /.npm/
+- /.zoom/
+- /.java/
+- /.bluej/
+- /.spring/
+- /.ipython/
+- /.gnupg/
+- /.pki/
+- /.zcompdump
+- /.python_history
+- /.steam/
+- /.gnome/
+- /.docker/
+- /.emulator_console_auth_token
+- /.flutter
+
+# relative directories
+- target/release/
+- target/debug/
+- target/wasm*/
+- .git/
+- .import/
+- build/
+- .dart_tools/
+- android/
+- node_modules/
+- /Musik/
+- /Bruno/
+
+# special files
+- *.o
+- *.wav
+- *.mp3
+- *.ogg
+- *.mp4
