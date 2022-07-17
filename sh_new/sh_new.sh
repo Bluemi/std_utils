@@ -40,4 +40,4 @@ if [ -n "$execute_permissions" ]; then
 	chmod u+x "$filename"
 fi
 
-vi "$filename"
+nvim "$filename"
