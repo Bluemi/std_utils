@@ -6,7 +6,7 @@ TARGET_DIR="./Backup/BlackBoxBackup"
 if [ ! -d "$TARGET_DIR" ]; then
 	mount_strubbel backup
 fi
-rsync -ah --delete --info=progress2 --exclude-from "$EXCLUDE_FILE" $HOME "$TARGET_DIR"
+rsync -ah --delete --info=progress2 --exclude-from "$EXCLUDE_FILE" "$HOME/" "$TARGET_DIR"
 if [ -d "$TARGET_DIR" ]; then
 	mount_strubbel backup  # unmount
 fi

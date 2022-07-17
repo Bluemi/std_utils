@@ -44,6 +44,27 @@
 - /.docker/
 - /.emulator_console_auth_token
 - /.flutter
+- /.sudo_as_admin_successful
+- /.bash_logout
+- /.emacs.d
+- /.lesshst
+- /.nvidia-settings-rc
+- /.pulse-cookie
+- /.qjoypad3
+- /.sh_history
+- /.steampath
+- /.steampid
+- /.wget-hsts
+- /.Xauthority
+- /.xsession-errors
+- /.yarn
+- /.yarnrc
+- /.zsh_history
+- /.zshrc
+- /.xsession-errors.old
+- /.viminfo
+- /.bash_history
+
 
 # relative directories
 - target/release/
