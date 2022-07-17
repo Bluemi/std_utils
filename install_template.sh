@@ -1,13 +1,13 @@
 #!/bin/bash
 
-SCRIPT_NAME="mount_strubbel"
+SCRIPT_NAME="SCRIPT_NAME"
 
 echo "installing \"$SCRIPT_NAME\"..."
 
 mkdir -p $HOME/.local/bin
 
-SOURCE_PATH="$PWD/mount_strubbel.sh"
-TARGET_PATH="$HOME/.local/bin/mount_strubbel"
+SOURCE_PATH="$PWD/$SCRIPT_NAME.sh"
+TARGET_PATH="$HOME/.local/bin/$SCRIPT_NAME"
 
 if [ -e $TARGET_PATH ]; then
 	echo "  ERROR: $SCRIPT_NAME already exists at $TARGET_PATH"
