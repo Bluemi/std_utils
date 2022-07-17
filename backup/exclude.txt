@@ -1,15 +1,25 @@
 # absolute directories
-- /Backup
+- /Backup/
+- /Musik/
+- /music/
+- /Zotero/
+- /Desktop/
+- /video/
+- /apps/
+- /snap/
+- /projects/app/flutter-codelabs/
+- /cbmi/data/
+- /Bruno/
 - /.local/share/
 - /.cache/
-- /apps/
 - /.virtualenvs/
 - /.android/
-- /snap/
-- /cbmi/data/
 - /.rustup/
+- /.wine/
+- /.minecraft/
+- /.pokemmo/
+- /.adobe-reader-11/
 - /.cargo/
-- /projects/app/flutter-codelabs/
 - /.local/bin/aseprite/
 - /.config/Slack/
 - /.config/discord/
@@ -28,22 +38,29 @@
 - /.librewolf/
 - /.log/
 - /.zotero/
-- /Zotero/
 - /.npm/
 - /.zoom/
+- /.vscode-oss/
 - /.java/
 - /.bluej/
 - /.spring/
 - /.ipython/
+- /.vpython-root/
+- /.vpython_cipd_cache/
+- /.python_history
 - /.gnupg/
 - /.pki/
+- /.audacity-data/
+- /.scratch/
+- /.gphoto/
 - /.zcompdump
-- /.python_history
 - /.steam/
 - /.gnome/
+- /.gnome2/
 - /.docker/
 - /.emulator_console_auth_token
 - /.flutter
+- /.flutter-devtools/
 - /.sudo_as_admin_successful
 - /.bash_logout
 - /.emacs.d
@@ -57,13 +74,14 @@
 - /.wget-hsts
 - /.Xauthority
 - /.xsession-errors
+- /.xsession-errors.old
 - /.yarn
 - /.yarnrc
 - /.zsh_history
 - /.zshrc
-- /.xsession-errors.old
 - /.viminfo
 - /.bash_history
+- /.dmrc
 
 
 # relative directories
@@ -76,8 +94,6 @@
 - .dart_tools/
 - android/
 - node_modules/
-- /Musik/
-- /Bruno/
 
 # special files
 - *.o
