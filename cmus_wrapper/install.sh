@@ -22,7 +22,7 @@ make_sym_link cmus_wrapper.sh
 make_sym_link mount_cmus.sh
 
 if ! echo $PATH | grep "$HOME/\.local/bin" > /dev/null; then
-	echo "  to make \"goto\" work you should add $HOME/.local/bin to \$PATH!"
+	echo "  to make \"cmus_wrapper\" work you should add $HOME/.local/bin to \$PATH!"
 fi
 
 echo "finished \"cmus_wrapper\" installation"
