@@ -9,10 +9,10 @@ fi
 for filename in *; do
 	case "${filename,,}" in
 		*.mp4|*.mp3|*.mov|*.webm)
-			vlc "$filename"
+			silent vlc "$filename"
 			;;
 		*.jpg|*.png)
-			gwenview "$filename"
+			silent gwenview "$filename"
 			;;
 		*)
 			echo "no fitting program found for $filename"
