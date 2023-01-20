@@ -1,7 +1,6 @@
 #!/bin/bash
 
 filename=
-execute_permissions=
 
 while true; do
 	if [ -z "$1" ]; then
@@ -9,9 +8,6 @@ while true; do
 	fi
 
 	case "$1" in
-		-x|--execute-permissions)
-			execute_permissions=1
-			;;
 		*)
 			if [ -n "$filename" ]; then
 				echo "To many positional arguments: $1"
@@ -36,8 +32,6 @@ echo "#!/bin/bash" > "$filename"
 echo "" >> "$filename"
 echo "" >> "$filename"
 
-if [ -n "$execute_permissions" ]; then
-	chmod u+x "$filename"
-fi
+chmod u+x "$filename"
 
 nvim "$filename"
