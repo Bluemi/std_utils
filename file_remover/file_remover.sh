@@ -8,7 +8,7 @@ fi
 
 for filename in *; do
 	case "${filename,,}" in
-		*.mp4|*.mp3|*.mov|*.webm)
+		*.mp4|*.mp3|*.mov|*.webm|*.opus|*.aac)
 			silent vlc "$filename"
 			;;
 		*.jpg|*.png)
