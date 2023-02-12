@@ -1,9 +1,11 @@
 #!/bin/bash
 
 for arg in "$@"; do
-	path=$(realpath "$arg")
-	if [ "$path" == "/etc/hosts" ]; then
-		exit 1
+	if [ -f "$arg" ]; then
+		path=$(realpath "$arg")
+		if [ "$path" == "/etc/hosts" ]; then
+			exit 1
+		fi
 	fi
 done
 
