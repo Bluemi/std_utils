@@ -34,4 +34,4 @@ echo "" >> "$filename"
 
 chmod u+x "$filename"
 
-nvim "$filename"
+open-editor "$filename"

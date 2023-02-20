@@ -41,13 +41,4 @@ echo "" >> "$filename"
 
 chmod u+x "$filename"
 
-if [ -z "$EDITOR" ]; then
-	for editor in "nvim" "vim" "vi"; do
-		if which "$editor" &>/dev/null; then
-			EDITOR="$editor"
-			break;
-		fi
-	done
-fi
-
-"$EDITOR" "$filename"
+open-editor "$filename"
