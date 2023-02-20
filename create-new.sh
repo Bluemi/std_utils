@@ -13,4 +13,4 @@ fi
 mkdir "$1"
 
 cp install_template.sh "$1"/install.sh
-sed "s/THE_SCRIPT_NAME/$1" -i "$1"/install.sh
+sed "s/THE_SCRIPT_NAME/$1/" -i "$1"/install.sh
