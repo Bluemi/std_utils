@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SCRIPT_NAME="THE_SCRIPT_NAME"
+SCRIPT_NAME="open-editor"
 
 echo "installing \"$SCRIPT_NAME\"..."
 
