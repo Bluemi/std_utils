@@ -1,6 +1,12 @@
 #!/bin/bash
 
-echo "installing \"op\"..."
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+CYAN='\033[0;36m'
+NC='\033[0m'
+
+echo -e "installing ${GREEN}\"op\"${NC}"
 
 mkdir -p $HOME/.local/bin
 
@@ -10,11 +16,11 @@ SOURCE_PATH="$PWD/op"
 TARGET_PATH="$HOME/.local/bin/op"
 
 if [ -e $TARGET_PATH ]; then
-	echo "  ERROR: op already exists at $TARGET_PATH"
+	echo -e "  ${YELLOW}SKIP${NC}: op already exists at ${CYAN}$TARGET_PATH${NC}"
 	exit 1
 fi
 
-echo "  creating symbolic link $SOURCE_PATH -> $TARGET_PATH"
+echo -e "  creating symbolic link ${CYAN}${SOURCE_PATH}${NC} -> ${CYAN}${TARGET_PATH}${NC}"
 
 ln -s $SOURCE_PATH $TARGET_PATH
 
@@ -24,18 +30,18 @@ SOURCE_PATH="$PWD/op_completer.py"
 TARGET_PATH="$HOME/.local/bin/op_completer.py"
 
 if [ -e $TARGET_PATH ]; then
-	echo "  ERROR: op completer already exists at $TARGET_PATH"
+	echo -e "  ${YELLOW}SKIP${NC}: op completer already exists at ${CYAN}$TARGET_PATH${NC}"
 	exit 1
 fi
 
-echo "  creating symbolic link $SOURCE_PATH -> $TARGET_PATH"
+echo -e "  creating symbolic link ${CYAN}${SOURCE_PATH}${NC} -> ${CYAN}${TARGET_PATH}${NC}"
 
 ln -s $SOURCE_PATH $TARGET_PATH
 
 # info
 
 if ! echo $PATH | grep "$HOME/\.local/bin" > /dev/null; then
-	echo "  to make \"op\" work you should add $HOME/.local/bin to \$PATH!"
+	echo -e "  ${YELLOW}HINT:${NC} to make \"op\" work you should add ${CYAN}$HOME/.local/bin${NC} to ${CYAN}\$PATH!${NC}"
 fi
 
-echo "finished \"op\" installation"
+echo -e "  ${GREEN}SUCCESS:${NC} finished ${GREEN}op${NC} installation"

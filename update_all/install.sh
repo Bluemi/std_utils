@@ -1,6 +1,12 @@
 #!/bin/bash
 
-echo "installing \"update_all.sh\"..."
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+CYAN='\033[0;36m'
+NC='\033[0m'
+
+echo -e "installing ${GREEN}update_all.sh${NC}"
 
 mkdir -p $HOME/.local/bin
 
@@ -8,16 +14,16 @@ SOURCE_PATH="$PWD/update_all.sh"
 TARGET_PATH="$HOME/.local/bin/update_all"
 
 if [ -e $TARGET_PATH ]; then
-	echo "  ERROR: update_all already exists at $TARGET_PATH"
+	echo -e "  ${YELLOW}SKIP:${NC} $update_all already exists at ${CYAN}$TARGET_PATH${NC}"
 	exit 1
 fi
 
-echo "  creating symbolic link $SOURCE_PATH -> $TARGET_PATH"
+echo -e "  creating symbolic link ${CYAN}${SOURCE_PATH}${NC} -> ${CYAN}${TARGET_PATH}${NC}"
 
 ln -s $SOURCE_PATH $TARGET_PATH
 
 if ! echo $PATH | grep "$HOME/\.local/bin" > /dev/null; then
-	echo "  to make \"update_all\" work you should add $HOME/.local/bin to \$PATH!"
+	echo -e "  ${YELLOW}HINT:${NC} to make ${GREEN}update_all${NC} work you should add ${CYAN}$HOME/.local/bin${NC} to ${CYAN}\$PATH!${NC}"
 fi
 
-echo "finished \"update_all\" installation"
+echo -e "  ${GREEN}SUCCESS:${NC} finished ${GREEN}update_all${NC} installation"

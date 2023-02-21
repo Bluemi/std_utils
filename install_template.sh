@@ -5,10 +5,11 @@ SCRIPT_NAME="THE_SCRIPT_NAME"
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
+CYAN='\033[0;36m'
 NC='\033[0m'
 
 
-echo "installing ${GREEN}\"$SCRIPT_NAME\"${NC}..."
+echo -e "installing ${GREEN}$SCRIPT_NAME${NC}"
 
 mkdir -p $HOME/.local/bin
 
@@ -16,16 +17,16 @@ SOURCE_PATH="$PWD/$SCRIPT_NAME.sh"
 TARGET_PATH="$HOME/.local/bin/$SCRIPT_NAME"
 
 if [ -e $TARGET_PATH ]; then
-	echo "  ${RED}ERROR:${NC} $SCRIPT_NAME already exists at $TARGET_PATH"
+	echo -e "  ${YELLOW}SKIP:${NC} $SCRIPT_NAME already exists at ${CYAN}$TARGET_PATH${NC}"
 	exit 1
 fi
 
-echo "  creating symbolic link ${YELLOW}${SOURCE_PATH}${NC} -> ${YELLOW}${TARGET_PATH}${NC}"
+echo -e "  creating symbolic link ${CYAN}${SOURCE_PATH}${NC} -> ${CYAN}${TARGET_PATH}${NC}"
 
 ln -s $SOURCE_PATH $TARGET_PATH
 
 if ! echo $PATH | grep "$HOME/\.local/bin" > /dev/null; then
-	echo "  ${YELLOW}HINT:${NC} to make \"$SCRIPT_NAME\" work you should add ${YELLOW}$HOME/.local/bin${NC} to ${YELLOW}\$PATH!${NC}"
+	echo -e "  ${YELLOW}HINT:${NC} to make ${GREEN}$SCRIPT_NAME${NC} work you should add ${CYAN}$HOME/.local/bin${NC} to ${CYAN}\$PATH!${NC}"
 fi
 
-echo "finished ${GREEN}\"$SCRIPT_NAME\"${NC} installation"
+echo -e "  ${GREEN}SUCCESS:${NC} finished ${GREEN}$SCRIPT_NAME${NC} installation"

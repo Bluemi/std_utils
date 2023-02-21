@@ -1,6 +1,15 @@
 #!/bin/bash
 
-echo "installing \"cmus_wrapper\"..."
+SCRIPT_NAME="cmus_wrapper"
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+CYAN='\033[0;36m'
+NC='\033[0m'
+
+
+echo -e "installing ${GREEN}$SCRIPT_NAME${NC}"
 
 mkdir -p $HOME/.local/bin
 
@@ -9,11 +18,11 @@ function make_sym_link() {
 	TARGET_PATH="$HOME/.local/bin/$1"
 
 	if [ -e $TARGET_PATH ]; then
-		echo "  ERROR: $1 already exists at $TARGET_PATH"
+		echo -e "  ${YELLOW}SKIP:${NC} $1 already exists at ${CYAN}$TARGET_PATH${NC}"
 		exit 1
 	fi
 
-	echo "  creating symbolic link $SOURCE_PATH -> $TARGET_PATH"
+	echo -e "  creating symbolic link ${CYAN}${SOURCE_PATH}${NC} -> ${CYAN}${TARGET_PATH}${NC}"
 
 	ln -s $SOURCE_PATH $TARGET_PATH
 }
@@ -22,7 +31,7 @@ make_sym_link cmus_wrapper.sh
 make_sym_link mount_cmus.sh
 
 if ! echo $PATH | grep "$HOME/\.local/bin" > /dev/null; then
-	echo "  to make \"cmus_wrapper\" work you should add $HOME/.local/bin to \$PATH!"
+	echo -e "  ${YELLOW}HINT:${NC} to make ${GREEN}$SCRIPT_NAME${NC} work you should add ${CYAN}$HOME/.local/bin${NC} to ${CYAN}\$PATH!${NC}"
 fi
 
-echo "finished \"cmus_wrapper\" installation"
+echo -e "  ${GREEN}SUCCESS:${NC} finished ${GREEN}$SCRIPT_NAME${NC} installation"
