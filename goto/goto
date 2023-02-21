@@ -79,6 +79,6 @@ else
 	if [ -n "$line" ]; then
 		cd "$line"
 	else
-		echo "id '$1' not found"
+		echo -e "${RED}id ${CYAN}$1${RED} not found${NC}"
 	fi
 fi
