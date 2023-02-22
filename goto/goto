@@ -37,7 +37,8 @@ if [ "$1" == "-l" ]; then
 		printf ${GREEN}${keyword}${NC}
 		printf ' %.0s' $(seq 0 $num_padding)
 		printf "${YELLOW}- ${NC}"
-		printf ${CYAN}${LINE#*:}${NC}
+		dir=$(echo ${LINE#*:} | sed "s:^$HOME:~:")
+		printf ${CYAN}${dir}${NC}
 		echo
 	done < $libpath
 	return
