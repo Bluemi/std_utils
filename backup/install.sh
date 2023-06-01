@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SCRIPT_NAME="backup_now"
+SCRIPT_NAME="backup-now"
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -13,7 +13,7 @@ echo -e "installing ${GREEN}$SCRIPT_NAME${NC}"
 mkdir -p $HOME/.local/bin
 
 SOURCE_PATH="$PWD/backup_now.sh"
-TARGET_PATH="$HOME/.local/bin/backup_now"
+TARGET_PATH="$HOME/.local/bin/backup-now"
 
 if [ -e $TARGET_PATH ]; then
 	echo -e "  ${YELLOW}SKIP:${NC} $SCRIPT_NAME already exists at ${CYAN}$TARGET_PATH${NC}"
