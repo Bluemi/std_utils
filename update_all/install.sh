@@ -11,7 +11,7 @@ echo -e "installing ${GREEN}update_all.sh${NC}"
 mkdir -p $HOME/.local/bin
 
 SOURCE_PATH="$PWD/update_all.sh"
-TARGET_PATH="$HOME/.local/bin/update_all"
+TARGET_PATH="$HOME/.local/bin/update-all"
 
 if [ -e $TARGET_PATH ]; then
 	echo -e "  ${YELLOW}SKIP:${NC} $update_all already exists at ${CYAN}$TARGET_PATH${NC}"
@@ -23,7 +23,7 @@ echo -e "  creating symbolic link ${CYAN}${SOURCE_PATH}${NC} -> ${CYAN}${TARGET_
 ln -s $SOURCE_PATH $TARGET_PATH
 
 if ! echo $PATH | grep "$HOME/\.local/bin" > /dev/null; then
-	echo -e "  ${YELLOW}HINT:${NC} to make ${GREEN}update_all${NC} work you should add ${CYAN}$HOME/.local/bin${NC} to ${CYAN}\$PATH!${NC}"
+	echo -e "  ${YELLOW}HINT:${NC} to make ${GREEN}update-all${NC} work you should add ${CYAN}$HOME/.local/bin${NC} to ${CYAN}\$PATH!${NC}"
 fi
 
-echo -e "  ${GREEN}SUCCESS:${NC} finished ${GREEN}update_all${NC} installation"
+echo -e "  ${GREEN}SUCCESS:${NC} finished ${GREEN}update-all${NC} installation"
