@@ -97,7 +97,7 @@
 
 # special files
 - *.o
-- *.wav
-- *.mp3
-- *.ogg
-- *.mp4
+# - *.wav
+# - *.mp3
+# - *.ogg
+# - *.mp4
