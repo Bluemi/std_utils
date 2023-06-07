@@ -6,5 +6,7 @@ if [ -n "$1" ]; then
 	commit_message="$1"
 fi
 
-git add -A && git commit -m "$commit_message" && git push
+echo "$commit_message"
+
+# git add -A && git commit -m "$commit_message" && git push
 
