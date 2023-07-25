@@ -24,7 +24,9 @@ fi
 while read file; do
 	echo "clearing notebook output for \"$file\""
 	python3 -m nbconvert --clear-output --log-level="CRITICAL" "$file"
-	git add "$file"
+	if [ -n "$git_root" ]; then
+		git add "$file"
+	fi
 done < "$NOTEBOOKS_TO_CLEAR"
 
 # rm "$NOTEBOOKS_TO_CLEAR"
