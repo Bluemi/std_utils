@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo "--- updating system packages ---"
+MAKEFLAGS="-j$(nproc)" sudo pacman -Syu --noconfirm
+
 echo "--- updating yay packages ---"
 MAKEFLAGS="-j$(nproc)" yay -Syu --noconfirm
 
