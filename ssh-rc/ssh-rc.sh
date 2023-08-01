@@ -5,4 +5,4 @@ if [ -z "$1" ]; then
 	exit 1
 fi
 
-ssh -YC "$1" -X x2x -to :0.0 -west
+ssh -YC "$1" -X x2x -to :0.0 -north
