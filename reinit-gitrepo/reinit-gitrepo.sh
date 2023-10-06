@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 REPO_NAME="$(basename "$PWD")"
 BACKUP_DIR="/tmp/reinit_gitrepo/$REPO_NAME"
 
