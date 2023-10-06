@@ -17,5 +17,5 @@ else
 	git reset --hard origin/main
 fi
 
-echo "showing diff between backup and original:"
+echo "######### showing diff between backup and original #########"
 diff -r . "$BACKUP_DIR"
