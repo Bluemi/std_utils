@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# for more information visit: https://doku.tid.dfn.de/en:eduroam:easyroam
+
 if [ -z "$1" ]; then
 	echo -e "Usage:\ncreate_easyroam_cert <cert.p12>"
 	echo "If you don't have any .p12 file, go to \"https://www.easyroam.de/Auth/Wayf?entityID=https://www.easyroam.de/shibboleth&return=https://www.easyroam.de/Shibboleth.sso/Login\" and create/download one"
