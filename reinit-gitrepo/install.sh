@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SCRIPT_NAME="screen_active"
+SCRIPT_NAME="reinit-gitrepo"
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -13,22 +13,8 @@ echo -e "installing ${GREEN}$SCRIPT_NAME${NC}"
 
 mkdir -p $HOME/.local/bin
 
-# Add screen-active
 SOURCE_PATH="$PWD/$SCRIPT_NAME.sh"
-TARGET_PATH="$HOME/.local/bin/screen-active"
-
-if [ -e $TARGET_PATH ]; then
-	echo -e "  ${YELLOW}SKIP:${NC} $SCRIPT_NAME already exists at ${CYAN}$TARGET_PATH${NC}"
-	exit 1
-fi
-
-echo -e "  creating symbolic link ${CYAN}${SOURCE_PATH}${NC} -> ${CYAN}${TARGET_PATH}${NC}"
-
-ln -s $SOURCE_PATH $TARGET_PATH
-
-# add screen-active-impl
-SOURCE_PATH="$PWD/$SCRIPT_NAME-impl.sh"
-TARGET_PATH="$HOME/.local/bin/screen-active-impl"
+TARGET_PATH="$HOME/.local/bin/$SCRIPT_NAME"
 
 if [ -e $TARGET_PATH ]; then
 	echo -e "  ${YELLOW}SKIP:${NC} $SCRIPT_NAME already exists at ${CYAN}$TARGET_PATH${NC}"

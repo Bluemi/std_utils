@@ -1,3 +1,3 @@
 #!/bin/bash
 
-paplay "$HOME/.local/etc/timerd/complete.wav"
+silent paplay "$HOME/.local/etc/timer/complete.wav"
