@@ -13,7 +13,7 @@ echo -e "installing ${GREEN}$SCRIPT_NAME${NC}"
 
 mkdir -p $HOME/.local/bin
 
-SOURCE_PATH="$PWD/$SCRIPT_NAME.sh"
+SOURCE_PATH="$PWD/$SCRIPT_NAME.py"
 TARGET_PATH="$HOME/.local/bin/$SCRIPT_NAME"
 
 if [ -e $TARGET_PATH ]; then
