@@ -10,6 +10,7 @@
 - /projects/app/flutter-codelabs/
 - /cbmi/data/
 - /Bruno/
+- /tmp/
 - /.local/share/
 - /.cache/
 - /.virtualenvs/
