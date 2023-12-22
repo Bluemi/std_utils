@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NOTEBOOKS_TO_CLEAR="/tmp/notebooks_to_clear"
+FILES_TO_CLEAR="/tmp/notebooks_to_clear"
 
 # activate virtual env
 VIRTUAL_ENV_NAME="clear_notebook"
@@ -16,9 +16,9 @@ fi
 git_root="$(git rev-parse --show-toplevel 2>/dev/null)"
 if [ -n "$git_root" ]; then
 	cd "$git_root"
-	git diff --diff-filter=d --cached --name-only | grep ".ipynb$" > "$NOTEBOOKS_TO_CLEAR"
+	git diff --diff-filter=d --cached --name-only | grep ".ipynb$" > "$FILES_TO_CLEAR"
 else
-	find -name "*.ipynb" > "$NOTEBOOKS_TO_CLEAR"
+	find . -name "*.ipynb" > "$FILES_TO_CLEAR"
 fi
 
 while read file; do
@@ -27,6 +27,22 @@ while read file; do
 	if [ -n "$git_root" ]; then
 		git add "$file"
 	fi
-done < "$NOTEBOOKS_TO_CLEAR"
+done < "$FILES_TO_CLEAR"
 
-# rm "$NOTEBOOKS_TO_CLEAR"
+# remove .ipy
+find . -type d -name ".ipynb_checkpoints" > "$FILES_TO_CLEAR"
+
+while IFS= read -r -u 10 file; do
+	echo "removing ipynb checkpoints \"$file\""
+	rm -ir "$file"
+done 10< "$FILES_TO_CLEAR"
+
+# remove __pycache__
+find . -type d -name "__pycache__" > "$FILES_TO_CLEAR"
+
+while IFS= read -r -u 10 file; do
+	echo "removing pycache \"$file\""
+	rm -ir "$file"
+done 10< "$FILES_TO_CLEAR"
+
+# rm "$FILES_TO_CLEAR"
