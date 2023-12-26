@@ -11,6 +11,7 @@
 - /cbmi/data/
 - /Bruno/
 - /tmp/
+- /data/
 - /.local/share/
 - /.cache/
 - /.conda/
