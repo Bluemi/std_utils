@@ -12,6 +12,7 @@
 - /Bruno/
 - /tmp/
 - /data/
+- /misc/data/
 - /.local/share/
 - /.cache/
 - /.conda/
