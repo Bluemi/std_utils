@@ -30,6 +30,7 @@ def format_size(size):
     return '{}{}'.format(str(size).ljust(4), sizes[pot_index])
 
 def main():
+    os.makedirs(os.path.dirname(LOG_FILE), exist_ok=True)
     print(Colors.OKBLUE + 'starting backup:' + Colors.ENDC)
     linewidth = shutil.get_terminal_size((80, 20))[0]
     log = []
