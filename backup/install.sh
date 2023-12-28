@@ -12,18 +12,29 @@ echo -e "installing ${GREEN}$SCRIPT_NAME${NC}"
 
 mkdir -p $HOME/.local/bin
 
+# ---- install backup-now ----
 SOURCE_PATH="$PWD/backup_now.sh"
 TARGET_PATH="$HOME/.local/bin/backup-now"
 
 if [ -e $TARGET_PATH ]; then
 	echo -e "  ${YELLOW}SKIP:${NC} $SCRIPT_NAME already exists at ${CYAN}$TARGET_PATH${NC}"
-	exit 1
+else
+	echo -e "  creating symbolic link ${CYAN}${SOURCE_PATH}${NC} -> ${CYAN}${TARGET_PATH}${NC}"
+	ln -s $SOURCE_PATH $TARGET_PATH
 fi
 
-echo -e "  creating symbolic link ${CYAN}${SOURCE_PATH}${NC} -> ${CYAN}${TARGET_PATH}${NC}"
+# ---- install format backup output ----
+SOURCE_PATH="$PWD/format_backup_output.py"
+TARGET_PATH="$HOME/.local/bin/format_backup_output.py"
 
-ln -s $SOURCE_PATH $TARGET_PATH
+if [ -e $TARGET_PATH ]; then
+	echo -e "  ${YELLOW}SKIP:${NC} $SCRIPT_NAME already exists at ${CYAN}$TARGET_PATH${NC}"
+else
+	echo -e "  creating symbolic link ${CYAN}${SOURCE_PATH}${NC} -> ${CYAN}${TARGET_PATH}${NC}"
+	ln -s $SOURCE_PATH $TARGET_PATH
+fi
 
+# ---- check PATH ----
 if ! echo $PATH | grep "$HOME/\.local/bin" > /dev/null; then
 	echo -e "  ${YELLOW}HINT:${NC} to make ${GREEN}$SCRIPT_NAME${NC} work you should add ${CYAN}$HOME/.local/bin${NC} to ${CYAN}\$PATH!${NC}"
 fi

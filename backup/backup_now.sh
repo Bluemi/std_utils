@@ -19,4 +19,4 @@ case $HOSTNAME in
 		;;
 esac
 
-rsync -ah --delete --info=progress2 --exclude-from "$EXCLUDE_FILE" "$HOME/" "strubbel:/volume3/Backup/$dir/"
+rsync -ah --delete --itemize-changes --out-format="%t %o %l %i %f" --exclude-from "$EXCLUDE_FILE" "$HOME/" "strubbel:/volume3/Backup/$dir/" | format_backup_output.py
