@@ -15,11 +15,6 @@ fi
 echo "--- updating flatpak packages ---"
 sudo flatpak update --assumeyes
 
-echo "--- updating snap packages ---"
-sudo snap refresh
-sleep 1
-sudo systemctl stop snapd.service
-
 echo "--- updating rust packages ---"
 rustup update
 
