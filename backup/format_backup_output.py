@@ -39,8 +39,9 @@ def main():
 
         if len(split_line) == 6:
             date, time, action, update_size, info, filename = split_line
+            print('\r{}'.format(filename).ljust(linewidth), end='')
             if info[0] == '<' or action == 'del.':
-                print('\r{}'.format(filename).ljust(linewidth), end='')
+                print('')
                 try:
                     update_size = int(update_size)
                 except ValueError:
