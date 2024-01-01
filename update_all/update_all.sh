@@ -12,12 +12,12 @@ if which set-x-settings 2> /dev/null; then
 	set-x-settings
 fi
 
-if which flatpak; then
+if which flatpak 2> /dev/null; then
 	echo "--- updating flatpak packages ---"
 	sudo flatpak update --assumeyes
 fi
 
-if which rustup; then
+if which rustup 2> /dev/null; then
 	echo "--- updating rust packages ---"
 	rustup update
 fi
