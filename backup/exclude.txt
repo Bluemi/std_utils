@@ -26,6 +26,7 @@
 - /.adobe-reader-11/
 - /.cargo/
 - /.local/bin/aseprite/
+- /.config/DisneyPlus/
 - /.config/Slack/
 - /.config/discord/
 - /.config/google-chrome/
