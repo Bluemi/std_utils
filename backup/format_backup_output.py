@@ -31,7 +31,7 @@ def format_size(size):
 
 def main():
     os.makedirs(os.path.dirname(LOG_FILE), exist_ok=True)
-    print(Colors.OKBLUE + 'starting backup:' + Colors.ENDC)
+    print(Colors.OKBLUE + 'starting backup' + Colors.ENDC)
     linewidth = shutil.get_terminal_size((80, 20))[0]
     log = []
     for line in sys.stdin:
