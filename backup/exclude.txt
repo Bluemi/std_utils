@@ -12,6 +12,8 @@
 - /Bruno/
 - /tmp/
 - /data/
+- /projects/ml/determined-ai-cluster/data
+- /projects/ml/determined-ai-cluster/workdir
 - /misc/data/
 - /.local/share/
 - /.local/state/
