@@ -29,6 +29,9 @@
 - /.cargo/
 - /.local/bin/aseprite/
 - /.config/DisneyPlus/
+- /.config/GIMP/
+- /.config/JetBrains/
+- /.config/libreoffice/
 - /.config/Slack/
 - /.config/discord/
 - /.config/google-chrome/
@@ -96,6 +99,7 @@
 - target/release/
 - target/debug/
 - target/wasm*/
+- __pycache__/
 - .git/
 - .import/
 - build/
@@ -106,6 +110,7 @@
 # special files
 - *.o
 - *.iso
+- *.pyc
 # - *.wav
 # - *.mp3
 # - *.ogg
