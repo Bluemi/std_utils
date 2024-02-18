@@ -39,6 +39,8 @@
 - /.config/Element/
 - /.config/chromium/
 - /.config/Signal/
+- /.config/pulse/
+- /.config/vlc/
 - /.gradle/
 - /.dartServer/
 - /.dart/
