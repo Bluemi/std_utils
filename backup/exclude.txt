@@ -41,6 +41,7 @@
 - /.config/Signal/
 - /.config/pulse/
 - /.config/vlc/
+- /.config/spotify/
 - /.gradle/
 - /.dartServer/
 - /.dart/
