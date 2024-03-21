@@ -1,18 +1,11 @@
 #!/bin/bash
 
-PID_FILE="$HOME/.local/share/screen_active/pid_file"
-PID_DIR="$(dirname "$PID_FILE")"
+pid=$(pgrep -f "screen-active-impl")
 
-mkdir -p "$PID_DIR"
-
-if [ -f "$PID_FILE" ]; then
-	# screen-active is running -> stop it
-	pid="$(cat "$PID_FILE")"
-	kill -s 15 "$pid"
-	rm "$PID_FILE"
-	echo "screen-active stopped"
-else
+if [ -z "$pid" ]; then
 	screen-active-impl &
-	echo $! > "$PID_FILE"
 	echo "screen-active started"
+else
+	kill -s 15 "$pid"
+	echo "screen-active stopped with pid $pid"
 fi

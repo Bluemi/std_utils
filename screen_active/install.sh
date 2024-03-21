@@ -27,7 +27,7 @@ echo -e "  creating symbolic link ${CYAN}${SOURCE_PATH}${NC} -> ${CYAN}${TARGET_
 ln -s $SOURCE_PATH $TARGET_PATH
 
 # add screen-active-impl
-SOURCE_PATH="$PWD/$SCRIPT_NAME-impl.sh"
+SOURCE_PATH="$PWD/${SCRIPT_NAME}_impl.sh"
 TARGET_PATH="$HOME/.local/bin/screen-active-impl"
 
 if [ -e $TARGET_PATH ]; then
