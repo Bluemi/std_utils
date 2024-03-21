@@ -1,6 +1,16 @@
 #!/bin/bash
 
+print_help() {
+	echo "mount_strubbel.sh [DIR] [-l] [-h]"
+	echo "DIR       one of f[oto], a[rchiv], b[runo], m[usik], backup"
+	echo "-l -h     list DIR options"
+}
+
 case "$1" in
+	-l|-h|--help)
+		print_help
+		exit 0
+		;;
 	[Ff]|[Ff]oto)
 		dir=Foto
 		;;
@@ -17,7 +27,7 @@ case "$1" in
 		dir=Backup
 		;;
 	*)
-		echo "choose between foto, archiv17, bruno"
+		print_help
 		exit 1
 		;;
 esac
