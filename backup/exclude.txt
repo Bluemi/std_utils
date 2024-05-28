@@ -15,6 +15,10 @@
 - /projects/ml/determined-ai-cluster/data
 - /projects/ml/determined-ai-cluster/workdir
 - /misc/data/
+- /work/visual_computing/code/FrameAggregation/workspace
+- /work/visual_computing/code/FrameAggregation/workspace_lsc
+- /work/visual_computing/code/lsc_csv_cleanup/data
+- /.m2
 - /.local/share/
 - /.local/state/
 - /.cache/
@@ -109,6 +113,7 @@
 - .dart_tools/
 - android/
 - node_modules/
+- .venv
 
 # special files
 - *.o
@@ -118,3 +123,5 @@
 # - *.mp3
 # - *.ogg
 # - *.mp4
+- *.fury
+- *.fv
