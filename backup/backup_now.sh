@@ -2,6 +2,11 @@
 
 EXCLUDE_FILE="$HOME/.local/etc/backup_now/excludes.txt"
 
+if [ ! -f "$EXCLUDE_FILE" ]; then
+	echo "ERROR: missing exclude file: \"$EXCLUDE_FILE\""
+	exit 1
+fi
+
 if [ -d "$HOME/Backup" ]; then
 	mount_strubbel backup  # unmount
 fi
