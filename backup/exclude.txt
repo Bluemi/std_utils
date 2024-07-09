@@ -18,20 +18,29 @@
 - /work/visual_computing/code/FrameAggregation/workspace
 - /work/visual_computing/code/FrameAggregation/workspace_lsc
 - /work/visual_computing/code/lsc_csv_cleanup/data
-- /.m2
+- /work/visual_computing/data
+- /Screenshots
+
+# needed hidden files
++ /.pypirc
++ /.config
++ /.bashrc
++ /.xprofile
++ /.ssh
++ /.profile
++ /.gitconfig
++ /.tmux.conf
++ /.vim
++ /.ideavimrc
++ /.asoundrc
+
+# .local files
 - /.local/share/
 - /.local/state/
-- /.cache/
-- /.conda/
-- /.virtualenvs/
-- /.android/
-- /.rustup/
-- /.wine/
-- /.minecraft/
-- /.pokemmo/
-- /.adobe-reader-11/
-- /.cargo/
 - /.local/bin/aseprite/
++ /.local
+
+# .config dir
 - /.config/DisneyPlus/
 - /.config/GIMP/
 - /.config/JetBrains/
@@ -46,61 +55,10 @@
 - /.config/pulse/
 - /.config/vlc/
 - /.config/spotify/
-- /.gradle/
-- /.dartServer/
-- /.dart/
-- /.mozilla/
-- /.jdks/
-- /.pub-cache/
-- /.var/
-- /.librewolf/
-- /.log/
-- /.zotero/
-- /.npm/
-- /.zoom/
-- /.vscode-oss/
-- /.java/
-- /.bluej/
-- /.spring/
-- /.ipython/
-- /.vpython-root/
-- /.vpython_cipd_cache/
-- /.python_history
-- /.gnupg/
-- /.pki/
-- /.audacity-data/
-- /.scratch/
-- /.gphoto/
-- /.zcompdump
-- /.steam/
-- /.gnome/
-- /.gnome2/
-- /.docker/
-- /.emulator_console_auth_token
-- /.flutter
-- /.flutter-devtools/
-- /.sudo_as_admin_successful
-- /.bash_logout
-- /.emacs.d
-- /.lesshst
-- /.nvidia-settings-rc
-- /.pulse-cookie
-- /.qjoypad3
-- /.sh_history
-- /.steampath
-- /.steampid
-- /.wget-hsts
-- /.Xauthority
-- /.xsession-errors
-- /.xsession-errors.old
-- /.yarn
-- /.yarnrc
-- /.zsh_history
-- /.zshrc
-- /.viminfo
-- /.bash_history
-- /.dmrc
++ /.config
 
+# exclude all hidden files in home directory
+- /.*
 
 # relative directories
 - target/release/
@@ -125,3 +83,4 @@
 # - *.mp4
 - *.fury
 - *.fv
+- *.gguf
