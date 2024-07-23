@@ -41,6 +41,7 @@
 + /.local
 
 # .config dir
+- /.config/VirtualBox/
 - /.config/DisneyPlus/
 - /.config/GIMP/
 - /.config/JetBrains/
@@ -77,6 +78,7 @@
 - *.o
 - *.iso
 - *.pyc
+- *.bin
 # - *.wav
 # - *.mp3
 # - *.ogg
