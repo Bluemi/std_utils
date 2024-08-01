@@ -7,7 +7,7 @@ function set_xinput_props {
 			xinput set-button-map 10 1 2 3 5 4 6 7
 			;;
 		blackbox)
-			silent xinput --set-prop "pointer:Logitech MX Vertical Advanced Ergonomic Mouse" "libinput Natural Scrolling Enabled" 1
+			xinput set-prop 11 285 1  # inverse scroll direction for mouse
 			xinput set-button-map 10 1 2 3 5 4 6 7
 			;;
 	esac
