@@ -3,7 +3,7 @@
 function set_xinput_props {
   case "$HOSTNAME" in
     lightbox)
-			xinput set-prop 10 329 1  # inverse trackpad scroll direction
+			xinput set-prop 10 331 1  # inverse trackpad scroll direction
 			xinput set-button-map 10 1 2 3 5 4 6 7
 			;;
 		blackbox)
