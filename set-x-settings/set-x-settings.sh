@@ -7,7 +7,7 @@ function set_xinput_props {
 			xinput set-button-map 10 1 2 3 5 4 6 7
 			;;
 		blackbox)
-			xinput set-prop 11 287 1  # inverse scroll direction for mouse
+			xinput set-prop 11 288 1  # inverse scroll direction for mouse
 			xinput set-button-map 10 1 2 3 5 4 6 7
 			;;
 	esac
