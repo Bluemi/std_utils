@@ -21,6 +21,9 @@
 - /work/visual_computing/data
 - /Screenshots
 - /projects/util/wikipedia_search/data
+- /work/ukumi/code/visual-anomaly-detector/data
+- /work/ukumi/code/visual-anomaly-detector/modules/split_detection/data/
+- /work/ukumi/code/visual-anomaly-detector/modules/scene_detection/data/
 
 # needed hidden files
 + /.pypirc
