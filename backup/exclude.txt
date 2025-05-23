@@ -24,6 +24,8 @@
 - /work/ukumi/code/visual-anomaly-detector/data
 - /work/ukumi/code/visual-anomaly-detector/modules/split_detection/data/
 - /work/ukumi/code/visual-anomaly-detector/modules/scene_detection/data/
+- /projects/util/abgeordnetenwatch-python/data
+- /projects/util/textproz/data
 
 # needed hidden files
 + /.pypirc
