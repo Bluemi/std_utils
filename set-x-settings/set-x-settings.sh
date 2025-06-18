@@ -7,7 +7,11 @@ function set_xinput_props {
 			xinput set-button-map 10 1 2 3 5 4 6 7
 			;;
 		blackbox)
-			xinput set-prop 11 288 1  # inverse scroll direction for mouse
+			mouse_id=$(xinput list | grep 'Logitech MX Vertical Advanced Ergonomic Mouse' | grep -v keyboard | grep -o 'id=[0-9]*' | cut -d= -f2 | head -n1)
+			natural_scrolling_id="$(xinput list-props "$mouse_id" | grep -i 'natural scrolling' | grep -v 'Default' | grep -oP '\(\K[0-9]+')"
+
+			# inverse scroll direction for mouse
+			xinput set-prop "$mouse_id" "$natural_scrolling_id" 1
 			xinput set-button-map 10 1 2 3 5 4 6 7
 			;;
 	esac
