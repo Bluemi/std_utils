@@ -12,6 +12,7 @@
 # 
 # sudo openconnect --user "$user" --authgroup "HTW-SSL-VPN-Split" "vpncl.htw-berlin.de" --passwd-on-stdin <<< "$pw"
 
-AUTHFILE="$HOME/.local/etc/htw_vpn/openvpn-HTW-mfa-connect-config.ovpn"
+CONFIGFILE="$HOME/.local/etc/htw_vpn/openvpn-HTW-mfa-connect-config.ovpn"
+AUTHFILE="$HOME/.local/etc/htw_vpn/auth"
 
-sudo openvpn --config "$AUTHFILE" --dev tun0
+sudo openvpn --config "$CONFIGFILE" --auth-user-pass "$AUTHFILE" --dev tun0
