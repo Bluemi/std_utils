@@ -42,6 +42,7 @@ echo "    'eap=TLS'" >> easyroam
 echo "    'proto=WPA RSN'" >> easyroam
 echo "    'identity=\"${CN_NAME}\"'   # Hier muss der CN (Common Name) aus dem easyroam Pseudozertifikat stehen!" >> easyroam
 echo "    'client_cert=\"/etc/netctl/cert/easyroam_client_cert.pem\"'" >> easyroam
+echo "    'altsubject_match=\"DNS:easyroam.eduroam.de\"'" >> easyroam
 echo "    'private_key=\"/etc/netctl/cert/easyroam_client_key.pem\"'" >> easyroam
 echo "    'private_key_passwd=\"PASSWORD\"'" >> easyroam
 echo "    'ca_cert=\"/etc/netctl/cert/easyroam_root_ca.pem\"'" >> easyroam
@@ -51,4 +52,4 @@ echo ")" >> easyroam
 mkdir -p cert
 mv *.pem cert
 
-echo -e "\nPlease replace PASSWORD in easyroam config"
+echo -e "\nPlease replace PASSWORD in easyroam config and check if identity=CN_NAME matches the CNNAME from easyroam_client_cert.pem"
