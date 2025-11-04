@@ -80,6 +80,7 @@
 - android/
 - node_modules/
 - .venv
+- venv
 
 # special files
 - *.o
@@ -94,3 +95,6 @@
 - *.fury
 - *.fv
 - *.gguf
+- data/**/*.jpg
+- data/**/*.mkv
+- data/**/*.png
