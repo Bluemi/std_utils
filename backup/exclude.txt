@@ -27,6 +27,7 @@
 - /projects/util/abgeordnetenwatch-python/data
 - /projects/util/textproz/data
 - /work/ukumi/code/facial-reaction-detection/data
+- /projects/ml/fisch_tool/data
 
 # needed hidden files
 + /.pypirc
@@ -98,3 +99,4 @@
 - data/**/*.jpg
 - data/**/*.mkv
 - data/**/*.png
+- models/**/*.pt
