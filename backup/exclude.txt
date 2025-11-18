@@ -82,6 +82,7 @@
 - node_modules/
 - .venv
 - venv
+- venv13
 
 # special files
 - *.o
