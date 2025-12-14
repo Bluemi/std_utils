@@ -8,7 +8,10 @@ TARGET_LENGTH = 50
 
 
 def get_cwd_no_home():
-    cwd = os.getcwd()
+    try:
+        cwd = os.getcwd()
+    except FileNotFoundError:
+        cwd = os.environ.get('PWD') + '?'
     home = os.path.expanduser('~')
     return cwd.replace(home, '~')
 
