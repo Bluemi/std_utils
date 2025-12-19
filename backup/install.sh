@@ -28,7 +28,7 @@ SOURCE_PATH="$PWD/format_backup_output.py"
 TARGET_PATH="$HOME/.local/bin/format_backup_output.py"
 
 if [ -e $TARGET_PATH ]; then
-	echo -e "  ${YELLOW}SKIP:${NC} $SCRIPT_NAME already exists at ${CYAN}$TARGET_PATH${NC}"
+	echo -e "  ${YELLOW}SKIP:${NC} format_backup_output.py already exists at ${CYAN}$TARGET_PATH${NC}"
 else
 	echo -e "  creating symbolic link ${CYAN}${SOURCE_PATH}${NC} -> ${CYAN}${TARGET_PATH}${NC}"
 	ln -s $SOURCE_PATH $TARGET_PATH

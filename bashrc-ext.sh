@@ -40,13 +40,6 @@ function docker_remove_containers() {
 	docker rm $(docker ps -a -q)
 }
 
-function prompt_command {
-	CWD_TRIMMED="$($HOME/.local/bin/bash_prompt.py)"
-}
-
-export PROMPT_COMMAND=prompt_command
-export PS1='\[\033[34m\]$CWD_TRIMMED\$\[\033[00m\] '
-
 . "$HOME/.local/bin/goto" -c  # for goto autocompletion
 
 export EDITOR="nvim"
