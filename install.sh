@@ -1,7 +1,10 @@
 #!/bin/bash
 
-# installs all the underlying tools
+# source bashrc-ext.sh in $HOME/.bashrc
+grep 3bb1be4b-caab-437e-b631-60acc783a2d1 $HOME/.bashrc >/dev/null 2>&1 \
+	|| echo -e "\n# 3bb1be4b-caab-437e-b631-60acc783a2d1\nsource $PWD/bashrc-ext.sh\n" >> $HOME/.bashrc
 
+# install tools
 for d in */; do
 	if [ -f "$d/install.sh" ]; then
 		cd "$d"
