@@ -1,7 +1,6 @@
 alias clear_pyc='rm -v $(find -name "*.pyc")'
-alias r="./run.sh"
 alias py="ipython3 --no-banner"
-alias i3lock="i3lock -i /home/alok/Bilder/papa_backgrounds/DSC_0023.png"
+alias i3lock="i3lock -i $HOME/Bilder/papa_backgrounds/DSC_0023.png"
 alias l="ls -hAlt"
 alias cop="cd src && . op -c && cd .."
 alias g="grep -rnI"
@@ -26,13 +25,23 @@ function c() {
 	fi
 }
 
+function r() {
+	if [ -f ./run.sh ]; then
+		./run.sh "$@"
+	elif [ -f ./main.py ]; then
+		./main.py "$@"
+	else
+		echo "neither ./run.sh nor ./main.py could be found!"
+	fi
+}
+
 function docker_remove_containers() {
 	docker stop -t 1 $(docker ps -a -q)
 	docker rm $(docker ps -a -q)
 }
 
 function prompt_command {
-	CWD_TRIMMED="$(/home/alok/.local/bin/bash_prompt.py)"
+	CWD_TRIMMED="$($HOME/.local/bin/bash_prompt.py)"
 }
 
 export PROMPT_COMMAND=prompt_command
