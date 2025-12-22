@@ -64,13 +64,6 @@ function merge_history() {
 
 trap merge_history EXIT
 
-# Modify $PATH
-add_to_path() {
-    [[ -d "$1" ]] && [[ ":$PATH:" != *":$1:"* ]] && PATH="$1:$PATH"
-}
-
-add_to_path "$HOME/.local/bin"
-
 if [ -z "$SSH_CLIENT" ]; then
 	# xset r rate 130 40; xinput --set-prop "Microsoft Microsoft® Classic IntelliMouse®" "libinput Natural Scrolling Enabled" 1
 	set-x-settings
