@@ -1,3 +1,4 @@
 /download_pages/pages
 venv
 /init_scripts/local-bashrc-ext.sh
+/local-bashrc-ext.sh
