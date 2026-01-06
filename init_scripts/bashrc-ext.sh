@@ -35,9 +35,9 @@ function r() {
 	fi
 }
 
-function docker_remove_containers() {
-	docker stop -t 1 $(docker ps -a -q)
-	docker rm $(docker ps -a -q)
+function mkvenv() {
+	python -m venv venv
+	. venv/bin/activate
 }
 
 . "$HOME/.local/bin/goto" -c  # for goto autocompletion
