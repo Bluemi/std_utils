@@ -45,6 +45,11 @@ function docker_remove_containers() {
 	docker rm $(docker ps -a -q)
 }
 
+function mkvenv() {
+	python -m venv venv
+	. venv/bin/activate
+}
+
 . "$HOME/.local/bin/goto" -c  # for goto autocompletion
 
 export EDITOR="nvim"
