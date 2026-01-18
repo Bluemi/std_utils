@@ -35,6 +35,11 @@ function r() {
 	fi
 }
 
+function redp() {
+	goto redshift-pomodoro
+	venv/bin/python redshift-pomodoro/cli/main.py
+}
+
 function docker_remove_containers() {
 	docker stop -t 1 $(docker ps -a -q)
 	docker rm $(docker ps -a -q)
