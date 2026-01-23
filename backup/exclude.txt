@@ -11,6 +11,7 @@
 - /Bruno/
 - /tmp/
 - /projects/ml/determined-ai-cluster/workdir
+- /projects/ml/fisch_tool/sort
 - /work/visual_computing/code/FrameAggregation/workspace
 - /work/visual_computing/code/FrameAggregation/workspace_lsc
 - /Screenshots
