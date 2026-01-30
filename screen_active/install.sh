@@ -26,19 +26,6 @@ echo -e "  creating symbolic link ${CYAN}${SOURCE_PATH}${NC} -> ${CYAN}${TARGET_
 
 ln -s $SOURCE_PATH $TARGET_PATH
 
-# add screen-active-impl
-SOURCE_PATH="$PWD/${SCRIPT_NAME}_impl.sh"
-TARGET_PATH="$HOME/.local/bin/screen-active-impl"
-
-if [ -e $TARGET_PATH ]; then
-	echo -e "  ${YELLOW}SKIP:${NC} $SCRIPT_NAME already exists at ${CYAN}$TARGET_PATH${NC}"
-	exit 1
-fi
-
-echo -e "  creating symbolic link ${CYAN}${SOURCE_PATH}${NC} -> ${CYAN}${TARGET_PATH}${NC}"
-
-ln -s $SOURCE_PATH $TARGET_PATH
-
 if ! echo $PATH | grep "$HOME/\.local/bin" > /dev/null; then
 	echo -e "  ${YELLOW}HINT:${NC} to make ${GREEN}$SCRIPT_NAME${NC} work you should add ${CYAN}$HOME/.local/bin${NC} to ${CYAN}\$PATH!${NC}"
 fi
