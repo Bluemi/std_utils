@@ -69,7 +69,12 @@
 - node_modules/
 - .venv
 - venv
+- venv15
+- venv14
 - venv13
+- venv12
+- venv11
+- venv10
 - data
 - .idea
 
