@@ -53,3 +53,4 @@ mkdir -p cert
 mv *.pem cert
 
 echo -e "\nPlease replace PASSWORD in easyroam config and check if identity=CN_NAME matches the CNNAME from easyroam_client_cert.pem"
+echo -e "Use \n    openssl x509 -noout -subject -in cert/easyroam_client_cert.pem\n"
