@@ -1,5 +1,11 @@
 #!/bin/bash
 
+delay=0
+if [ "$1" = "-d" ] && [ -n "$2" ]; then
+  sleep "$2"
+  shift; shift;
+fi
+
 function set_xinput_props {
   case "$HOSTNAME" in
     lightbox)
