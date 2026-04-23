@@ -20,7 +20,9 @@ function set_xinput_props {
       xinput set-prop "$mouse_id" "$natural_scrolling_id" 1
       xinput set-button-map 10 1 2 3 5 4 6 7  2>/dev/null
       ;;
-    esac
+    *)
+      echo "hostname \"$HOSTNAME\" not found"
+  esac
 }
 
 if [ -z "$SSH_CLIENT" ]; then

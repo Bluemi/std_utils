@@ -75,7 +75,5 @@ function merge_history() {
 trap merge_history EXIT
 
 if [ -z "$SSH_CLIENT" ]; then
-	# xset r rate 130 40; xinput --set-prop "Microsoft Microsoft® Classic IntelliMouse®" "libinput Natural Scrolling Enabled" 1
-	set-x-settings -d 5 &
+	set-x-settings
 fi
-
