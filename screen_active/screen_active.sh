@@ -1,5 +1,5 @@
 #!/bin/bash
 
 xset -dpms
-xset -dpms
+xset s off
 xset s noblank
