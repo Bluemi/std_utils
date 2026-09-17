@@ -29,4 +29,7 @@ if ! echo $PATH | grep "$HOME/\.local/bin" > /dev/null; then
 	echo -e "  ${YELLOW}HINT:${NC} to make ${GREEN}$SCRIPT_NAME${NC} work you should add ${CYAN}$HOME/.local/bin${NC} to ${CYAN}\$PATH!${NC}"
 fi
 
+echo "installing ${GREEN}tsx${NC} globally"
+npm install -g tsx
+
 echo -e "  ${GREEN}SUCCESS:${NC} finished ${GREEN}$SCRIPT_NAME${NC} installation"

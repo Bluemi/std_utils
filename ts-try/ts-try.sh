@@ -10,8 +10,7 @@ touch "$TARGET"
 
 # If vim exited successfully, execute the code
 if [ $? -eq 0 ]; then
-    echo -e "\n--- Running TypeScript File ---"
-    npx tsx "$TARGET"
+    tsx "$TARGET"
 fi
 
 
