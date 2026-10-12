@@ -51,6 +51,7 @@
 - /.config/pulse/
 - /.config/vlc/
 - /.config/spotify/
+- /.config/anythingllm-desktop/
 + /.config
 
 # exclude all hidden files in home directory
