@@ -5,8 +5,8 @@ import secrets
 
 
 def main():
-    chars = string.ascii_letters + string.digits # + ".-_:%/&!$=+*#'\",;<>"
-    pw = create_pw(chars, k=16)
+    chars = string.ascii_letters + string.digits + ".-_:%/&!$=+*#'\",;<>"
+    pw = create_pw(chars, k=14)
     print(''.join(pw))
 
 

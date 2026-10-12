@@ -31,9 +31,12 @@ def list_dates_for_next_year(selected_day_index):
     print(f"\nHere are the dates for your selected day over the next 365 days:\n")
 
     # Loop 52 times to get one year's worth of dates
-    for i in range(52):
+    for i in range(-52, 52):
         next_date = first_date + datetime.timedelta(weeks=i)
-        print(next_date.strftime("%d.%m.%Y"))
+        if i:
+            print(next_date.strftime("%d.%m.%Y"))
+        else:
+            print(next_date.strftime("%d.%m.%Y"), '<<<< today')
     
     print("\n")
 
